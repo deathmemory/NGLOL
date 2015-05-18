@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Window size="260,600" sizebox="4,4,6,6" roundcorner="5,5" caption="0,0,0,28" mininfo="260,600">
+<Window size="930,600" sizebox="4,4,6,6" roundcorner="5,5" caption="0,0,0,28" mininfo="190,600">
 	<Font size="14" name="微软雅黑" />
 	<Font name="微软雅黑" blod="true" />
 	<VerticalLayout bkcolor="#FF1e2e3e" bkcolor2="#FFC6E0F1" bordercolor="#FF768D9B" bordersize="1" borderround="5,5" inset="1,0,1,0">
+		<!-- 标题栏 -->
 		<HorizontalLayout height="24">
 			<HorizontalLayout>
 				<Container padding="2,2,0,0" width="16" height="16" bkimage="file='res/default_logo.png'"></Container>
@@ -19,44 +20,82 @@
 					pushedimage="file='/res/video_bg.png' source='35,48,70,72'" ></button>
 			</HorizontalLayout>
 		</HorizontalLayout>
-		<!-- 个人信息 -->
-		<HorizontalLayout height="76">
-			<Container name="userphoto" width="40" height="40" padding="15,15,0,0" bkimage="file='res/default_pinfo.png'"></Container>
-			<VerticalLayout>
-				<text name="username" text="DeathMemory" padding="10,15,0,0" textcolor="#FFFFFF" font="0"/>	
-				<HorizontalLayout>
-					<ButtonEx name="huizhang" width="20" height="20" padding="10,2,0,0" tooltip="徽章"
-						foreimage="file='res/huizhang.png' source='0,0,18,18' dest='2,2,18,18'" 
-						hotimage="file='/res/video_bg.png' source='0,24,35,48'" 
-						pushedimage="file='/res/video_bg.png' source='0,48,35,72'" ></ButtonEx>
-					<ButtonEx name="jinbi" width="20" height="20" padding="10,2,0,0" tooltip="金币"
-						foreimage="file='res/huizhang.png' source='18,0,36,18' dest='2,2,18,18'" 
-						hotimage="file='/res/video_bg.png' source='0,24,35,48'" 
-						pushedimage="file='/res/video_bg.png' source='0,48,35,72'" ></ButtonEx>
+		<!-- 主体 -->
+		<HorizontalLayout>
+			<!-- 左边栏 -->
+			<VerticalLayout width="190">
+				<!-- 个人信息 -->
+				<HorizontalLayout height="76">
+					<Container name="userphoto" width="40" height="40" padding="15,15,0,0" bkimage="file='res/default_pinfo.png'"></Container>
+					<VerticalLayout>
+						<text name="username" text="DeathMemory" padding="10,15,0,0" textcolor="#FFFFFF" font="0"/>	
+						<HorizontalLayout>
+							<ButtonEx name="huizhang" width="20" height="20" padding="10,2,0,0" tooltip="徽章"
+								foreimage="file='res/huizhang.png' source='0,0,18,18' dest='2,2,18,18'" 
+								hotimage="file='/res/video_bg.png' source='0,24,35,48'" 
+								pushedimage="file='/res/video_bg.png' source='0,48,35,72'" ></ButtonEx>
+							<ButtonEx name="jinbi" width="20" height="20" padding="10,2,0,0" tooltip="金币"
+								foreimage="file='res/huizhang.png' source='18,0,36,18' dest='2,2,18,18'" 
+								hotimage="file='/res/video_bg.png' source='0,24,35,48'" 
+								pushedimage="file='/res/video_bg.png' source='0,48,35,72'" ></ButtonEx>
+						</HorizontalLayout>
+					</VerticalLayout>
 				</HorizontalLayout>
+				<!-- 功能模块 -->
+				<VerticalLayout inset="16,16,16,16">
+					<Option name="zhanji" text="战绩查询" group="guncs" selectedtextcolor="#FFF1C30F"
+						width="156" height="36" padding="0,5,0,5"
+						normalimage="file='/res/zha.png' source='1,112,91,138'"
+						hotimage="file='/res/zha.png' source='93,112,183,138'"
+						selectedimage="file='/res/zha.png' source='185,112,275,138'"></Option>
+					<Option name="huanfu" text="更换皮肤" group="guncs" selectedtextcolor="#FFF1C30F"
+						width="156" height="36" padding="0,5,0,5"
+						normalimage="file='/res/zha.png' source='1,112,91,138'"
+						hotimage="file='/res/zha.png' source='93,112,183,138'"
+						selectedimage="file='/res/zha.png' source='185,112,275,138'"></Option>
+					<Option name="shubiao" text="更换鼠标" group="guncs" selectedtextcolor="#FFF1C30F"
+						width="156" height="36" padding="0,5,0,5"
+						normalimage="file='/res/zha.png' source='1,112,91,138'"
+						hotimage="file='/res/zha.png' source='93,112,183,138'"
+						selectedimage="file='/res/zha.png' source='185,112,275,138'"></Option>
+					<Option name="luxiang" text="查看录像" group="guncs" selectedtextcolor="#FFF1C30F"
+						width="156" height="36" padding="0,5,0,5"
+						normalimage="file='/res/zha.png' source='1,112,91,138'"
+						hotimage="file='/res/zha.png' source='93,112,183,138'"
+						selectedimage="file='/res/zha.png' source='185,112,275,138'"></Option>
+					<Option name="hanhua" text="快捷喊话" group="guncs" selectedtextcolor="#FFF1C30F"
+						width="156" height="36" padding="0,5,0,5"
+						normalimage="file='/res/zha.png' source='1,112,91,138'"
+						hotimage="file='/res/zha.png' source='93,112,183,138'"
+						selectedimage="file='/res/zha.png' source='185,112,275,138'"></Option>
+					<Option name="nigoule" text="帮助我们" group="guncs" selectedtextcolor="#FFF1C30F"
+						width="156" height="36" padding="0,5,0,5"
+						normalimage="file='/res/zha.png' source='1,112,91,138'"
+						hotimage="file='/res/zha.png' source='93,112,183,138'"
+						selectedimage="file='/res/zha.png' source='185,112,275,138'"></Option>
+				</VerticalLayout>
+				<VerticalLayout height="40">
+					<Option name="jungleTimer" text="        打野计时" selected="true" height="17"
+						normalimage="file='res/sw_off1.png' dest='40,0,85,17'"
+						selectedimage="file='res/sw_on1.png' dest='40,0,85,17'"></Option>
+				</VerticalLayout>
 			</VerticalLayout>
+			<!-- 右边栏 -->
+			<container bkcolor="#FFFFFFFF" padding="0,5,16,0" visible="true">
+				<TabLayout>
+					<WebBrowser homepage="http://www.nikksy.com" autonavi="true"></WebBrowser>
+					<WebBrowser homepage="http://www.mkjogo.com" autonavi="true"></WebBrowser>
+				</TabLayout>
+			</container>
+		
+
 		</HorizontalLayout>
-		<!-- 功能模块 -->
-		<VerticalLayout inset="16,16,16,16">
-			<Option name="zhanji" text="战绩查询" group="guncs" selectedtextcolor="#FFF1C30F"
-				width="80" height="20" padding="0,5,0,5"
-				normalimage="file='/res/zha.png' source='1,112,91,138'"
-				hotimage="file='/res/zha.png' source='93,112,183,138'"
-				selectedimage="file='/res/zha.png' source='185,112,275,138'"></Option>
-			<Option name="pifu" text="皮肤更换" group="guncs" selectedtextcolor="#FFF1C30F"
-				width="80" height="20" padding="0,5,0,5"
-				normalimage="file='/res/zha.png' source='1,112,91,138'"
-				hotimage="file='/res/zha.png' source='93,112,183,138'"
-				selectedimage="file='/res/zha.png' source='185,112,275,138'"></Option>
-			<Option name="shubiao" text="鼠标更换" group="guncs" selectedtextcolor="#FFF1C30F"
-				width="80" height="20" padding="0,5,0,5"
-				normalimage="file='/res/zha.png' source='1,112,91,138'"
-				hotimage="file='/res/zha.png' source='93,112,183,138'"
-				selectedimage="file='/res/zha.png' source='185,112,275,138'"></Option>
-		</VerticalLayout>
 		<!-- 底部 -->
-		<HorizontalLayout height="18">
-			<label name="versionLab" text="ver:1.0.0.1" padding="5,0,0,0"></label>
+		<HorizontalLayout height="18" bkcolor="#FF1e2e3e">
+			<label name="versionLab" text="ver:1.0.0.1" padding="5,0,0,0" textcolor="#FFFFFFFF"></label>
 		</HorizontalLayout>
+		<VerticalLayout height="2">
+			<container height="1" padding="1,0,1,0" bkcolor="#FF1e2e3e" inset="1,0,1,1" bordersize="0"></container>	
+		</VerticalLayout>
 	</VerticalLayout>
 </Window>
