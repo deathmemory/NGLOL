@@ -15,6 +15,7 @@
 
 using namespace DuiLib;
 
+#include <atlstr.h>
 // #ifdef _DEBUG
 // #   ifdef _UNICODE
 // #       pragma comment(lib, "..\\Lib\\DuiLib_ud.lib")

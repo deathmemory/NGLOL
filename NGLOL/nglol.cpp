@@ -1,6 +1,9 @@
 #include "stdafx.h"
+#include "JSCall.h"
+
 #include <exdisp.h>
 #include <comdef.h>
+
 
 class C360SafeFrameWnd : public CWindowWnd, public INotifyUI
 {
@@ -15,6 +18,9 @@ public:
 		m_pMaxBtn = static_cast<CButtonUI*>(m_pm.FindControl(_T("maxbtn")));
 		m_pRestoreBtn = static_cast<CButtonUI*>(m_pm.FindControl(_T("restorebtn")));
 		m_pMinBtn = static_cast<CButtonUI*>(m_pm.FindControl(_T("minbtn")));
+
+		m_pWebBrowser = static_cast<CWebBrowserUI*>(m_pm.FindControl(_T("mywb")));
+		m_pJsCall = new CJSCall(m_pWebBrowser);
 	}
 
 	void OnPrepare() {
@@ -42,12 +48,12 @@ public:
 		{
 			CDuiString name = msg.pSender->GetName();
 			CTabLayoutUI* pControl = static_cast<CTabLayoutUI*>(m_pm.FindControl(_T("switch")));
-			if (name == _T("examine"))
-				pControl->SelectItem(0);
-			else if (name == _T("trojan"))
-				pControl->SelectItem(1);
-			else if (name == _T("plugins"))
-				pControl->SelectItem(2);
+			if (name == _T("zhanji"))
+				m_pWebBrowser->Navigate2(CPaintManagerUI::GetInstancePath() + _T("skin/res/html_ui/search_matches.html"));
+			else if (name == _T("huanfu"))
+				m_pWebBrowser->Navigate2(CPaintManagerUI::GetInstancePath() + _T("skin/res/html_ui/change_skins.html"));
+			else if (name == _T("shubiao"))
+				m_pJsCall->CallJScript(_T("test"));
 			else if (name == _T("vulnerability"))
 				pControl->SelectItem(3);
 			else if (name == _T("rubbish"))
@@ -240,6 +246,8 @@ private:
 	CButtonUI* m_pMaxBtn;
 	CButtonUI* m_pRestoreBtn;
 	CButtonUI* m_pMinBtn;
+	CWebBrowserUI* m_pWebBrowser;
+	CJSCall* m_pJsCall;
 	//...
 };
 
